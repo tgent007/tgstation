@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/revolver
 	name = "\improper .357 revolver"
-	desc = "A suspicious revolver. Uses .357 ammo." //usually used by syndicates
+	desc = "A suspicious revolver. Uses .357 ammo." //usually used by syndicates but can be grown from Gatfruit.
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 	fire_sound = 'sound/weapons/gun/revolver/shot_alt.ogg'
@@ -136,7 +136,7 @@
 /obj/item/gun/ballistic/revolver/russian/do_spin()
 	. = ..()
 	if(.)
-		spun = TRUE
+		spun = FALSE
 
 /obj/item/gun/ballistic/revolver/russian/attackby(obj/item/A, mob/user, params)
 	..()
@@ -149,7 +149,7 @@
 /obj/item/gun/ballistic/revolver/russian/attack_self(mob/user)
 	if(!spun)
 		spin()
-		spun = TRUE
+		spun = FALSE
 		return
 	..()
 
