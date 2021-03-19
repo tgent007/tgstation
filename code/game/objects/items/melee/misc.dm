@@ -688,3 +688,31 @@
 	overlay = mutable_appearance(icon, overlay_state)
 	overlay.appearance_flags = RESET_COLOR | RESET_ALPHA | KEEP_APART
 	add_overlay(overlay)
+
+/obj/item/melee/amogus
+	name = "Amogus"
+	desc = "Funny amogus instant kill."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "cane"
+	inhand_icon_state = "cane"
+	worn_icon_state = "cane"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	material_flags = MAERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Material type changes the prefix as well as the color.
+	custom_materials = list(/datum/material/plastic = 12000) //default_test
+	slot_flags = ITEM_SLOT_POCKET
+	force = 70
+	w_class = WEIGHT_CLASS_BULKY
+	throwforce = 40
+	block_chance = 20
+	armor_penetration = 90
+	attack_verb_continuous = list("smacks", "strikes", "stabs", "slashes")
+	attack_verb_simple = list("smack", "strike", "stab", "slash")
+	var/overlay_state = "cane_handle"
+	var/mutable_appearance/overlay
+	
+/obj/item/melee/amogus/Initialize()
+	. = ..()
+	overlay = mutable_appearance(icon, overlay_state)
+	overlay.appearance_flags = RESET_COLOR | RESET_ALPHA | KEEP_APART
+	add_overlay(overlay)
